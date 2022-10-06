@@ -15,7 +15,9 @@ RUN apt install nsis -y
 
 COPY . .
 
-RUN pip3 install -r requirements.txt
+RUN pip install -r requirements.txt
+
+RUN pip wheel --wheel-dir=wheels/ validators==0.20.0
 
 #ENV STREAMLIT_MAX_UPLOAD_SIZE=400
 
